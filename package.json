@@ -1,0 +1,51 @@
+{
+  "name": "dsh-session-storage",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A DSH bundle plugin that inspects and manages the local session storage DSH produces: size breakdown, garbage cleanup, and safe session deletion.",
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "session",
+    "storage",
+    "cleanup"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "meta": {
+    "title": "会话存储管理",
+    "description": "查看本地会话占用、清理孤儿缓存与空目录、删除会话（默认进回收站）。"
+  },
+  "icon": "./icon.svg",
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/host.test.mjs"
+  }
+}

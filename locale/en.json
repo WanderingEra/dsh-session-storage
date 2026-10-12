@@ -1,0 +1,4 @@
+{
+  "title": "Session storage manager",
+  "description": "Inspect local session usage, clean orphan caches and empty directories, and delete sessions (moved to a recycle bin by default)."
+}

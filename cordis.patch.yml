@@ -1,0 +1,6 @@
+# 会话存储管理 —— bundle patch
+# 把一个宿主插件行插入当前 profile 的配置树。
+# 宿主半边注册 /session-storage/* 接口，客户端半边注册侧边栏面板与页面。
+- insert:
+    - id: session-storage
+      name: 'dsh-session-storage'
